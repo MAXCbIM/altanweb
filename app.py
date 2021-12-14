@@ -8,4 +8,6 @@ app = Flask(__name__)
 def index_page():
     return render_template("index.html")
 
-app.run()
+# точка входа
+if __name__ == "__main__":
+    app.run(debug=True)

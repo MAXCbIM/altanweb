@@ -1,0 +1,69 @@
+/* универсальный селектор */
+* {
+    /* внешний отступ */
+    /* margin: 0; */
+    /* внутренний отступ */
+    /* padding: 0; */
+}
+
+/* селектор по тегу */ /* Grid CSS */
+body {
+    margin: 0;
+    height: 100vh;
+}
+div {
+    border: solid 2px red;
+}
+
+/* селектор по классу */
+.wrapper {
+    border: none;
+    height: 100%;
+}
+
+/* селектор по идентификатору */
+#c1 {
+    border-color: green;
+}
+#c2 {
+    border-color: royalblue;
+}
+
+/* Grid CSS */
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        "h h h h"
+        "s1 m m s2"
+        "f f f f";
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: 80px 1fr 80px;
+}
+@media (max-width: 900px){
+    .wrapper {
+        display: grid;
+        grid-template-areas: 
+            "h h h h"
+            "s1 s1 s1 s1"
+            "m m m m"
+            "s2 s2 s2 s2"
+            "f f f f";
+        grid-template-rows: 80px 70px 1fr 50px 80px;
+    }  
+}
+
+.header {
+    grid-area: h;
+}
+.sidebar_1 {
+    grid-area: s1;
+}
+.main {
+    grid-area: m;
+}
+.sidebar_2 {
+    grid-area: s2;
+}
+.footer {
+    grid-area: f;
+}
