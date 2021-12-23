@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мин Сайтым</title>
-    <link rel="stylesheet" href="static/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Site</title>
+	<link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            header
-        </header>
-        <div class="sidebar_1">
-            sidebar_1
-        </div>
-        <div class="main">
-            main
-            <div id="c1" class="content">
-                Content 1
-            </div>
-            <div id="c2" class="content">
-                Content 2
-            </div>
-        </div>
-        <div class="sidebar_2">
-            sidebar_2
-        </div>
-        <footer class="footer">
-            footer
-        </footer>
-    </div>
+	<div class="wrapper">
+		<header class="header">
+			<div class="logo">
+				<div>
+					Logo
+				</div>
+			</div>
+			<ul class="navbar">
+				<li><a href="/">Home</a></li>
+				<li><a href="/product">Product</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</header>
+		<!-- <div class="sidebar_1">
+			sidebar 1
+		</div> -->
+		<div class="main">
+			<!-- main
+			<div id="c1" class="content">
+				Content 1
+			</div>
+			<div id="c2" class="content">
+				Content 2
+			</div> -->
+
+			{% block main %}
+			{% endblock %}
+		</div>
+		<!-- <div class="sidebar_2">
+			sidebar 2
+		</div> -->
+		<footer class="footer">
+			<div class="footer-text">
+				<div>
+					Copyright &copy; 2021 - Все права защищены
+				</div>
+			</div>
+			<div class="footer-text2">
+				<div>
+					Created by Aiyyskhan
+				</div>
+			</div>
+		</footer>
+	</div>
 </body>
 </html>
