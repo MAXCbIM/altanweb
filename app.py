@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from pwdGenerator import hashing
 
 app = Flask(__name__)
 
@@ -11,15 +12,20 @@ def index_page():
 @app.route("/product", methods=["GET", "POST"])
 def product_page():
 	msg = ""
-	name = ""
-	pwd = ""
 	if request.method == "POST":
-		name = request.form.get("name")
+		name = request.form.get("salt")
 		pwd = request.form.get("pwd")
+		num_char = request.form.get("num_char")
 
-		msg = f"{name} {pwd}"
+		if pwd:
+			raw_pwd = pwd + salt
 
-	return render_template("product.html", msg=msg, n=name, p=pwd)
+			if num_char == '-':
+				int_num_char = 0
+
+			msg = hashing(raw_pwd, int(num_char))
+
+	return render_template("product.html", msg=msg)
 
 # http://127.0.0.1:5000/test?v1=hello&v2=1234
 @app.route("/test")
