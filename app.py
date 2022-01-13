@@ -24,6 +24,8 @@ def product_page():
 				int_num_char = 0
 
 			msg = hashing(raw_pwd, int(num_char))
+		else:
+			msg = "Поле пароля не заполнено!"
 
 	return render_template("product.html", msg=msg)
 
