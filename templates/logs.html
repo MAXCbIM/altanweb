@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="content">
+    <h2>ДАнные из ДБ</h2>
+    <!-- таблица -->
+    <table>
+        <tr>
+            <th>Form</th>
+            <th>Result</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
